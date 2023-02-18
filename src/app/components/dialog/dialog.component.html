@@ -1,1 +1,50 @@
-<p>dialog works!</p>
+<h1 mat-dialog-title class="text-center">Add a product</h1>
+<div mat-dialog-content>
+  <form>
+    <mat-form-field appearance="outline">
+      <mat-label>Product name</mat-label>
+      <input matInput placeholder="pat@example.com" required />
+      <!-- <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error> -->
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Product category</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let category of categories" value="category">
+          {{ category }}
+        </mat-option>
+      </mat-select>
+      <!-- <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error> -->
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Date</mat-label>
+      <input matInput [matDatepicker]="dp" />
+      <mat-hint>MMMM DD, YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="dp"></mat-datepicker-toggle>
+      <mat-datepicker #dp></mat-datepicker>
+    </mat-form-field>
+
+    <label id="example-radio-group-label">Pick your favorite season</label>
+    <mat-radio-group
+      aria-labelledby="example-radio-group-label"
+      class="example-radio-group"
+    >
+      <mat-radio-button
+        class="example-radio-button"
+        *ngFor="let freshness of freshnessOptions"
+        [value]="freshness"
+      >
+        {{ freshness }}
+      </mat-radio-button>
+    </mat-radio-group>
+    <mat-form-field appearance="outline">
+      <mat-label>Price</mat-label>
+      <input matInput placeholder="Price" required type="number" />
+    </mat-form-field>
+    <div mat-dialog-actions [align]="'end'">
+      <button mat-raised-button mat-dialog-close color="warn" class="me-2">
+        Close
+      </button>
+      <button mat-raised-button color="primary">Add Product</button>
+    </div>
+  </form>
+</div>
