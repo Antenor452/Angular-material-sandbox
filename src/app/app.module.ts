@@ -7,10 +7,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './util/material/material.module';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, DialogComponent],
-  imports: [BrowserModule, NgbModule, BrowserAnimationsModule, MaterialModule],
+  imports: [
+    BrowserModule,
+    NgbModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   providers: [
     {
       provide: MAT_RADIO_DEFAULT_OPTIONS,
