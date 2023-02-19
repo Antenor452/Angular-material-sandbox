@@ -8,7 +8,7 @@ import { MaterialModule } from './util/material/material.module';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [AppComponent, DialogComponent],
   imports: [
@@ -18,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [
     {
